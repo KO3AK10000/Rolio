@@ -1,15 +1,31 @@
 //размеры
 $maxWidth: 1920;
-$maxWidthContainer: 1230;
+$maxWidthContainer: 1500;
 $paddingContainer: 15;	 
 
 
 //цвета
 :root{
     --color-light: #ffffff;
-    
-   
+    --color-dark: ##4A4A4A;
+    --color-primary: #7DA00C;
+    --color-ital: #009246;
+    --color-meet: #D73A31;
+    --color-east: #E67F10;
+    --color-primary-l: #BFD087;
+    --color-ital-l: #69D49E;;
+    --color-meet-l: #E8847E;
+    --color-east-l: #F1A757;
+
+    --grad-1: linear-gradient(320.69deg, #536614 15.36%, #97C20B 84.86%);
+    --grad-2: linear-gradient(320.42deg, #076534 15.36%, #00DB69 82.23%);
+    --grad-3: linear-gradient(321.31deg, #99160E 15.37%, #E84239 81.98%);
+    --grad-4: linear-gradient(324.18deg, #BA6400 14.36%, #FF9D34 85.34%);
 }
+
+
+    
+  
 
 
 

@@ -3,6 +3,15 @@
     margin: 0 auto;
     padding: 0 #{$paddingContainer + px};
     max-width: calc(#{$maxWidthContainer + px} + #{$paddingContainer + px} + #{$paddingContainer + px});
+    @include mac{
+        max-width: 1096px;
+    }
+    @include tablet{
+        padding: 0 40px;
+    }
+    @include minitablet{
+        padding: 0 15px;
+    }
 }
 
 
@@ -98,5 +107,19 @@ button{
     user-select: none;
     
 }
+
+//----------------убрать стрелки у number---------------
+/* Для Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* Для Firefox */
+input[type=number]{
+  -moz-appearance: textfield;
+} 
 
 

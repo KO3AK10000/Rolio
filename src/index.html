@@ -1,18 +1,594 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 
 @@include('html/head.html',{
-"title":"CreateX - Homepage"
-}) 
+"title":"R.olio - масло для всего!!!"
+})
 
 <body>
   @@include('html/header.html',{})
   <main class="main">
-
-  </main> 
+    <h1 class="visually-hidden">Масло на все случаи</h1>
+    <section class="products">
+      <div class="container products__container">
+        <h2 class="products__title" data-cat="0">Наши продукты</h2>
+        <ul class="products__nav nav-products">
+          <li class="nav-products__item unselectable nav-products__item--active" tabindex="0" data-cat="0">Для салата</li>
+          <li class="nav-products__item unselectable" tabindex="0" data-cat="0">Итальянское</li>
+          <li class="nav-products__item unselectable" tabindex="0" data-cat="0">Для мяса</li>
+          <li class="nav-products__item unselectable" tabindex="0" data-cat="0">Восточное</li>
+        </ul>
+        <div class="products__swiper">
+          <div class="swiper products-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <article class="products__item item-products sale-item" data-sale="1" data-price="115">
+                    <div class="item-products__img-container">
+                      <div class="item-products__img-big-circle img-big-circle img-big-circle--1">
+                        <div class="item-products__img-circle item-products__img-circle--1 img-circle img-circle--1"></div> 
+                      </div>
+                    </div>
+                    <div class="item-products__content" data-num="2">
+                      <h3 class="item-products__name sale-item-name">
+                        Масло “Для салата”
+                      </h3>
+                      <p class="item-products__descr">
+                        Название говорит само за себя. Это идеальная заправка, которая даже скучной и привычной капусте придаст неповторимый вкус и аромат. 
+                      </p>
+                      <div class="item-products__num-wrapper num">
+                        <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                        <label class="num__label">
+                          <input class="num__input num__input--1 sale-item-count" type="number" value="2" tabindex="-1">
+                        </label>
+                        <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                      </div>
+                      <div class="item-products__btns">
+                        <button class="item-products__learn-more btn btn--big btn--1">ПОДРОБНЕЕ</button>
+                        <button class="item-products__cart btn btn--big btn--1 sale-item-cart">В КОРЗИНУ</button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="products__item item-products sale-item" data-sale="2" data-price="115">
+                    <div class="item-products__img-container">
+                      <div class="item-products__img-big-circle img-big-circle img-big-circle--2">
+                        <div class="item-products__img-circle item-products__img-circle--2 img-circle img-circle--2"></div> 
+                      </div>
+                    </div>
+                    <div class="item-products__content" data-num="2">
+                      <h3 class="item-products__name sale-item-name">
+                        Масло “Итальянское”
+                      </h3>
+                      <p class="item-products__descr">
+                        Идеальное решение для легкого и быстрого маринада мяса, можно добавить капельку масла и после приготовления.  
+                      </p>
+                      <div class="item-products__num-wrapper num">
+                        <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                        <label class="num__label">
+                          <input class="num__input num__input--2 sale-item-count" type="number" value="2" tabindex="-1">
+                        </label>
+                        <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                      </div>
+                      <div class="item-products__btns">
+                        <button class="item-products__learn-more btn btn--big btn--2">ПОДРОБНЕЕ</button>
+                        <button class="item-products__cart btn btn--big btn--2 sale-item-cart">В КОРЗИНУ</button>
+                      </div>
+                    </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="products__item item-products sale-item" data-sale="3" data-price="115">
+                  <div class="item-products__img-container">
+                    <div class="item-products__img-big-circle img-big-circle img-big-circle--3">
+                      <div class="item-products__img-circle item-products__img-circle--3 img-circle img-circle--3"></div> 
+                    </div>
+                  </div>
+                  <div class="item-products__content" data-num="2">
+                    <h3 class="item-products__name sale-item-name">
+                      Масло “Итальянское”
+                    </h3>
+                    <p class="item-products__descr">
+                      Добавит ноток Италии в любое ваше блюдо. Паста, ризотто, пицца, салаты - его везде можно использовать.
+                    </p>
+                    <div class="item-products__num-wrapper num">
+                      <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                      <label class="num__label">
+                        <input class="num__input num__input--3 sale-item-count" type="number" value="2" tabindex="-1">
+                      </label>
+                      <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                    </div>
+                    <div class="item-products__btns">
+                      <button class="item-products__learn-more btn btn--big btn--3">ПОДРОБНЕЕ</button>
+                      <button class="item-products__cart btn btn--big btn--3 sale-item-cart">В КОРЗИНУ</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="products__item item-products sale-item" data-sale="4" data-price="115">
+                  <div class="item-products__img-container">
+                    <div class="item-products__img-big-circle img-big-circle img-big-circle--4">
+                      <div class="item-products__img-circle item-products__img-circle--4 img-circle img-circle--4"></div> 
+                    </div>
+                  </div>
+                  <div class="item-products__content" data-num="2">
+                    <h3 class="item-products__name sale-item-name">
+                      Масло “Восточное”
+                    </h3>
+                    <p class="item-products__descr">
+                      Oтлично подойдёт для блюд среднеазиатской кухни: шурпа, плов, лагман с этим маслом приобретут традиционные нотки Средней Азии.  
+                    </p>
+                    <div class="item-products__num-wrapper num">
+                      <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                      <label class="num__label">
+                        <input class="num__input num__input--4 sale-item-count" type="number" value="2" tabindex="-1">
+                      </label>
+                      <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                    </div>
+                    <div class="item-products__btns">
+                      <button class="item-products__learn-more btn btn--big btn--4">ПОДРОБНЕЕ</button>
+                      <button class="item-products__cart btn btn--big btn--4 sale-item-cart">В КОРЗИНУ</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="products__swiper-nav swiper-nav">
+            <button class="swiper-nav__btn products__swiper-nav-prew">&lt;</button>
+            <button class="swiper-nav__btn products__swiper-nav-next">&gt;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="oil" id="oil">
+      <div class="container">
+        <h2 class="oil__title title">Масло</h2>
+        <div class="oil__slider swiper">
+          <div class="swiper-wrapper">
+            <article class="oil__item item-oil swiper-slide sale-item" data-sale="1" data-price="115">
+              <div class="item-oil__img-container">
+                <div class="item-oil__img-big-circle img-big-circle img-big-circle--1">
+                  <div class="item-oil__img-circle item-oil__img-circle--1 img-circle img-circle--1">
+                    <img class="item-oil__img" src="@img/product-bottle-1.png" alt="Масло Для салата" width="53" height="229">
+                  </div> 
+                </div>
+              </div>
+              <div class="item-oil__content">
+                <h3 class="item-oil__name item-oil__name--1 sale-item-name">Масло “Для салата”</h3>
+                <p class="item-oil__descr">
+                  Название говорит само за себя. Это идеальная заправка, которая даже скучной и привычной капусте придаст неповторимый вкус и аромат.
+                </p>
+                <p class="item-oil__composition">
+                  <span class="item-oil__span">Состав: </span>
+                  оливковое масло холодного отжима, розмарин, тимьян, базилик, орегано, чеснок, смесь из 5 перцев.
+                </p>
+                <div class="item-oil__q-line">
+                  <div class="item-oil__num-wrapper num num--small">
+                    <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                    <label class="num__label">
+                      <input class="num__input num__input--1 sale-item-count" type="number" value="2" tabindex="-1">
+                    </label>
+                    <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                  </div>
+                  <div class="item-oil__pricing">
+                    <span class="item-oil__vol">250 мл</span>
+                    <span class="item-oil__price item-oil__price--1">
+                      <span>115 </span>
+                      грн
+                    </span>
+                  </div>
+                </div>
+                <div class="item-oil__btns">
+                  <button class="item-products__cart btn btn--small btn--1 sale-item-cart">В КОРЗИНУ</button>
+                  <button class="item-products__tg btn btn--small btn--1">ЗАКАЗАТЬ В ТГ</button>
+                </div>
+              </div>
+            </article>
+            <article class="oil__item item-oil swiper-slide sale-item" data-sale="2" data-price="115">
+              <div class="item-oil__img-container">
+                <div class="item-oil__img-big-circle img-big-circle img-big-circle--2">
+                  <div class="item-oil__img-circle item-oil__img-circle--2 img-circle img-circle--2">
+                    <img class="item-oil__img" src="@img/product-bottle-2.png" alt="Масло Итальянское" width="66" height="229">
+                  </div> 
+                </div>
+              </div>
+              <div class="item-oil__content">
+                <h3 class="item-oil__name item-oil__name--2 sale-item-name">Масло “Итальянское”</h3>
+                <p class="item-oil__descr">
+                  Добавит ноток Италии в любое ваше блюдо. Паста, ризотто, пицца, салаты - его везде можно использовать. 
+                </p>
+                <p class="item-oil__composition">
+                  <span class="item-oil__span">Состав: </span>
+                  оливковое масло холодного отжима, чеснок, вяленые томаты, базилик, орегано, майоран, смесь перцев.
+                </p>
+                <div class="item-oil__q-line">
+                  <div class="item-oil__num-wrapper num num--small">
+                    <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                    <label class="num__label">
+                      <input class="num__input num__input--2  sale-item-count" type="number" value="2" tabindex="-1">
+                    </label>
+                    <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                  </div>
+                  <div class="item-oil__pricing">
+                    <span class="item-oil__vol">250 мл</span>
+                    <span class="item-oil__price item-oil__price--2">
+                      <span>115 </span>
+                      грн
+                    </span>
+                  </div>
+                </div>
+                <div class="item-oil__btns">
+                  <button class="item-products__cart btn btn--small btn--2 sale-item-cart">В КОРЗИНУ</button>
+                  <button class="item-products__tg btn btn--small btn--2">ЗАКАЗАТЬ В ТГ</button>
+                </div>
+              </div>
+            </article>
+            <article class="oil__item item-oil swiper-slide sale-item" data-sale="3" data-price="115">
+              <div class="item-oil__img-container">
+                <div class="item-oil__img-big-circle img-big-circle img-big-circle--3">
+                  <div class="item-oil__img-circle item-oil__img-circle--3 img-circle img-circle--3">
+                    <img class="item-oil__img" src="@img/product-bottle-3.png" alt="Масло Для мяса" width="50" height="241">
+                  </div> 
+                </div>
+              </div>
+              <div class="item-oil__content">
+                <h3 class="item-oil__name item-oil__name--3 sale-item-name">Масло “Для мяса”</h3>
+                <p class="item-oil__descr">
+                  Идеальное решение для легкого и быстрого маринада мяса, можно добавить капельку масла и после приготовления.  
+                </p>
+                <p class="item-oil__composition">
+                  <span class="item-oil__span">Состав: </span>
+                  оливковое масло холодного отжима, чеснок, паприку, кориандр, смесь перцев, розмарин, тимьян, перец чили.
+                </p>
+                <div class="item-oil__q-line">
+                  <div class="item-oil__num-wrapper num num--small">
+                    <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                    <label class="num__label">
+                      <input class="num__input num__input--2  sale-item-count" type="number" value="2" tabindex="-1">
+                    </label>
+                    <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                  </div>
+                  <div class="item-oil__pricing">
+                    <span class="item-oil__vol">250 мл</span>
+                    <span class="item-oil__price item-oil__price--3">
+                      <span>115 </span>
+                      грн
+                    </span>
+                  </div>
+                </div>
+                <div class="item-oil__btns">
+                  <button class="item-products__cart btn btn--small btn--3 sale-item-cart">В КОРЗИНУ</button>
+                  <button class="item-products__tg btn btn--small btn--3">ЗАКАЗАТЬ В ТГ</button>
+                </div>
+              </div>
+            </article>
+            <article class="oil__item item-oil swiper-slide sale-item" data-sale="4" data-price="115">
+              <div class="item-oil__img-container">
+                <div class="item-oil__img-big-circle img-big-circle img-big-circle--4">
+                  <div class="item-oil__img-circle item-oil__img-circle--4 img-circle img-circle--4">
+                    <img class="item-oil__img" src="@img/product-bottle-4.png" alt="Масло Восточное" width="52" height="236">
+                  </div> 
+                </div>
+              </div>
+              <div class="item-oil__content">
+                <h3 class="item-oil__name item-oil__name--4 sale-item-name">Масло “Восточное”</h3>
+                <p class="item-oil__descr">
+                  Oтлично подойдёт для блюд среднеазиатской кухни: шурпа, плов, лагман с этим маслом приобретут традиционные нотки Средней Азии.
+                </p>
+                <p class="item-oil__composition">
+                  <span class="item-oil__span">Состав: </span>
+                  оливковое масло холодного отжима, перец чили, зира, куркума, чеснок, смесь перцев.
+                <div class="item-oil__q-line">
+                  <div class="item-oil__num-wrapper num num--small">
+                    <button class="num__btn num__btn--reduse" aria-label="уменьшить количество">-</button>
+                    <label class="num__label">
+                      <input class="num__input num__input--2  sale-item-count" type="number" value="2" tabindex="-1">
+                    </label>
+                    <button class="num__btn num__btn--increase" aria-label="увеличить количество">+</button>
+                  </div>
+                  <div class="item-oil__pricing">
+                    <span class="item-oil__vol">250 мл</span>
+                    <span class="item-oil__price item-oil__price--4">
+                      <span>115 </span>
+                      грн
+                    </span>
+                  </div>
+                </div>
+                <div class="item-oil__btns">
+                  <button class="item-products__cart btn btn--small btn--4 sale-item-cart">В КОРЗИНУ</button>
+                  <button class="item-products__tg btn btn--small btn--4">ЗАКАЗАТЬ В ТГ</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="oil__pagination swiper-pagination"></div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="title about__title">О нас</h2>
+        <div class="about__parts">
+          <div class="about__part">
+            <div class="about__img-wrapper">
+               <img class="about__img" src="@img/about-1.jpg" loading="lazy" aria-hidden="true" width="528" height="357">
+            </div>
+            <div class="about__content">
+              <h3 class="about__subtitle">Кто мы</h3>
+              <p class="about__text">Мы пара: Таня и Рома и мы создатели пряного оливкового масла R.olio.</p>
+              <p class="about__text">Предыстория:</p>
+              <p class="about__text">Так сложилось в нашей паре, что готовит у нас Рома, он очень увлечен кулинарией и каждый раз придумывает что-то новенькое.</p>
+              <p class="about__text">Накануне прошлого Нового года, мы готовили подарки нашим друзьям и родственникам. Нам захотелось к подаркам добавить что-то необычное, от себя.</p>
+              <p class="about__text">И к нам пришла идея, Рома готовил вкуснейшее пряное оливковое масло для своих рецептов, добавлял розмарин, тимьян, чеснок, разные виды перцев...каждый раз получался новый неповторимый вкус.</p>
+            </div>
+          </div>
+          <div class="about__part">
+            <div class="about__img-wrapper">
+              <img class="about__img" src="@img/about-2.jpg" loading="lazy" aria-hidden="true" width="528" height="333">
+            </div>
+            <div class="about__content">
+              <h3 class="about__subtitle">Что мы делаем</h3>
+              <p class="about__text">И мы решили сделать такое масло, как добавление к подарку. Надо сказать, что наши близкие оценили презент и просили снова и снова сделать им такое масло.</p>
+              <p class="about__text">И появилась идея: почему бы не попробовать запустить такое масло в продажу? Рома долго выверял рецепты, я разрабатывала дизайн этикеток и искала поставщиков. </p>
+              <p class="about__text">И вот мы готовы представить его вам!</p>
+              <p class="about__text">Мы старались сделать наше масло максимально доступным, при этом не потеряв в качестве. Стоимость бутылки(250мл) - всего 115грн.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rewiews" id="rewiews">
+      <div class="container">
+        <h2 class="title rewiews__title">Отзывы</h2>
+        <div class="rewievs__list swiper">
+          <div class="swiper-wrapper">
+            <div class="rewiews__item swiper-slide">
+              <img class="rewiew__img" src="@img/rewiew-1.jpg" loading="lazy" alt="rewiew-1" height="669" width="487">
+            </div>
+            <div class="rewiews__item swiper-slide">
+              <img class="rewiew__img" src="@img/rewiew-2.jpg" loading="lazy" alt="rewiew-2" height="669" width="487">
+            </div>
+            <div class="rewiews__item swiper-slide">
+              <img class="rewiew__img" src="@img/rewiew-3.jpg" loading="lazy" alt="rewiew-3" height="669" width="487">
+            </div>
+          </div>
+        </div>
+        <div class="rewiew__pag swiper-pagination"></div>
+      </div>
+    </section>
+    <section class="delivery" id="delivery">
+      <h2 class="visually-hidden">Варианты доставки и оплаты</h2>
+      <div class="delivery__line delivery__line--1">
+        <ul class="delivery__items delivery__items--1">
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#delivery-1"></use>
+            </svg>
+            <p class="delivery__name">Новая почта</p>
+          </li>
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#delivery-2"></use>
+            </svg>
+            <p class="delivery__name">Укрпочта</p>
+          </li>
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#delivery-3"></use>
+            </svg>
+            <p class="delivery__name">Самовывоз</p>
+          </li>
+        </ul>
+        <h3 class="delivery__subtitle">- Доставка</h3>
+      </div>
+      <div class="delivery__line delivery__line--2">
+        <h3 class="delivery__subtitle">Оплата -</h3>
+        <ul class="delivery__items delivery__items--2">
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#payment-1"></use>
+            </svg>
+            <p class="delivery__name">Наложенный платёж</p>
+          </li>
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#payment-2"></use>
+            </svg>
+            <p class="delivery__name">Приват24</p>
+          </li>
+          <li class="delivery__item">
+            <svg height="40" width="40">
+              <use xlink:href="img/icons/icons.svg#payment-3"></use>
+            </svg>
+            <p class="delivery__name">Наличными при самовывозе</p>
+          </li>
+        </ul>
+      </div>
+      <div class="container delivery__container"></div>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="title contacts__title">Контакты</h2>
+        <div class="contacts__wrapper">
+          <div class="contacts__img-wrapper">
+            <img class="contacts__img" src="@img/contacts-img.jpg" aria-hidden="true" loading="'lazy" width="740" height="472">
+          </div>
+          <div class="contacts__content">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <svg height="32" width="32">
+                  <use xlink:href="img/icons/icons.svg#phone"></use>
+                </svg>
+                <a class="contacts__link" href="tel:+380661143558">
+                  +38 (066) 11-43-558
+                </a>
+              </li>
+              <li class="contacts__item">
+                <svg height="32" width="32">
+                  <use xlink:href="img/icons/icons.svg#fb"></use>
+                </svg>
+                <a class="contacts__link" href="https://www.facebook.com/r.olio8/">
+                  https://www.facebook.com/r.olio8
+                </a>
+              </li>
+              <li class="contacts__item">
+                <svg height="32" width="32">
+                  <use xlink:href="img/icons/icons.svg#inst"></use>
+                </svg>
+                <a class="contacts__link" href="https://www.instagram.com/r.olio_">
+                  https://www.instagram.com/r.olio_/
+                </a>
+              </li>
+              <li class="contacts__item">
+                <svg height="32" width="32">
+                  <use xlink:href="img/icons/icons.svg#telega"></use>
+                </svg>
+                <a class="contacts__link" href="https://t.me/r_olio">
+                  https://t.me/r_olio
+                </a>
+              </li>
+              <li class="contacts__item">
+                <svg height="32" width="32">
+                  <use xlink:href="img/icons/icons.svg#vib"></use>
+                </svg>
+                <a class="contacts__link" href="viber://contact?number=%2B380661143558">
+                  +38 (066) 11-43-558
+                </a>
+              </li>
+            </ul>
+            <button class="contacts__btn btn btn btn--medium btn--1" aria-label="Открыть диалоговое окно">НАПИСАТЬ НАМ</button>
+          </div>
+        </div> 
+      </div>
+    </section>
+    <div class="modals">
+      <div class="modal modal--write">
+        <div class="modal__content write-us">
+          <h2 class="write-us__title">Написать нам</h2>
+          <form class="write-us__form" action="#">
+            <label class="write-us__label form-label">
+              <span class="form-label__span">Имя</span>
+              <input class="form-label__input" type="text" name="name" placeholder="Ваше имя">
+            </label>
+            <label class="write-us__label form-label">
+              <span class="form-label__span">Контактный номер телефона</span>
+              <input class="form-label__input" type="tel" name="tel" placeholder="+38(0__)___-__-__">
+            </label>
+            <label class="write-us__label form-label">
+              <textarea class="form-label__input form-label__input--textarea" name="message" placeholder="Текст комментария"></textarea>
+            </label>
+            <button class="write-us__btn btn btn--big btn--1" type="submit">ОТПРАВИТЬ</button>
+          </form>
+          <button class="modal__close" aria-label="Закрыть"></button>
+        </div>
+      </div>
+      <div class="modal modal--sended">
+        <div class="modal__content sended">
+          <button class="modal__close" aria-label="Закрыть"></button>
+          <h2 class="sended__title">Спасибо</h2>
+          <p class="sended__text">
+            <span class="write-us-name"></span>, Ваше сообщение было доставлено. Мы перезвоним Вам в ближайшее время и ответим на все вопросы.
+          </p>
+        </div>
+      </div>
+      <div class="modal modal--cart">
+        <div class="modal__content cart-modal">
+          <button class="modal__close" aria-label="Закрыть"></button>
+          <h2 class="cart-modal__title">КОРЗИНА</h2>
+          <ul class="cart-modal__list"></ul>
+          <form class="cart-modal__form cart-form" action="#">
+            <div class="cart-form__contacts">
+              <label class="cart-form__label form-label">
+                <span class="form-label__span">Имя получателя</span>
+                <input class="form-label__input" type="text" name="name" placeholder="Ваше имя">
+              </label>
+              <label class="cart-form__label form-label">
+                <span class="form-label__span">Контактный номер телефона</span>
+                <input class="form-label__input" type="tel" name="tel" placeholder="+38(0__)___-__-__">
+              </label>
+            </div>
+            <div class="cart-form__details">
+              <div class="cart-form__delivery tab-container cart-delivery">
+                <h3 class="cart-form__title">Способ доставки</h3>
+                <div class="cart-delivery__tabs cart-form__tabs">
+                  <button class="cart-delivery__tab-item cart-form__tab-item tab-item tab-item--active unselectable" data-tab-btn="1">Новая Почта</button>
+                  <button class="cart-delivery__tab-item cart-form__tab-item tab-item unselectable" data-tab-btn="2">Укрпочта</button>
+                  <button class="cart-delivery__tab-item cart-form__tab-item tab-item unselectable" data-tab-btn="3">Самовывоз</button>
+                </div>
+                  <div class="cart-delivery__content">
+                    <div class="cart-delivery__item tab-content__item tab-content__item--active" data-tab-content="1">
+                      <label class="cart-delivery__label form-label">
+                        <input class="form-label__input" type="text" name="np-city" placeholder="Город доставки">
+                      </label>
+                      <label class="cart-delivery__label form-label">
+                        <input class="form-label__input" type="text" name="np-post-number" placeholder="№ отделения НП">
+                      </label>
+                      <a class="cart-delivery__link" href="https://novaposhta.ua/ru/office/list" target="_blank">Узнать список отделений в Вашем городе</a>
+                    </div>
+                    <div class="cart-delivery__item tab-content__item" data-tab-content="2">
+                      <div class="cart-delivery__line">
+                        <label class="cart-delivery__label cart-delivery__label--s form-label">
+                          <input class="form-label__input" type="text" name="index" placeholder="49000">
+                        </label>
+                        <label class="cart-delivery__label  form-label">
+                          <input class="form-label__input" type="text" name="up-city" placeholder="Город">
+                        </label>
+                      </div>
+                      <div class="cart-delivery__line">
+                        <label class="cart-delivery__label cart-delivery__label-np form-label">
+                          <input class="form-label__input" type="text" name="street" placeholder="Улица">
+                        </label>
+                        <label class="cart-delivery__label cart-delivery__label--s cart-delivery__label-np form-label">
+                          <input class="form-label__input" type="text" name="housse" placeholder="Дом">
+                        </label>
+                      </div>
+                      <label class="cart-delivery__label  form-label">
+                        <input class="form-label__input" type="text" name="add-address" placeholder="Дополнительно (подъезд, квартира и т.п.)">
+                      </label>
+                    </div>
+                    <div class="cart-delivery__item tab-content__item" data-tab-content="3">
+                      <p class="cart-delivery__address">8502 Preston Rd. Inglewood, San Francisco 98380</p>
+                      <p class="cart-delivery__time">Пн-Пт 09.00 - 18.00</p>
+                      <a href="#" class="cart-delivery__link">Посмотреть на карте</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-form__payment tab-container cart-payment">
+                  <h3 class="cart-form__title">Способ оплаты</h3>
+                  <div class="cart-payment__tabs cart-form__tabs">
+                    <button class="cart-payment__tab-item cart-form__tab-item tab-item tab-item--active unselectable" data-tab-btn="1">Предоплата на карту</button>
+                    <button class="cart-payment__tab-item cart-form__tab-item tab-item unselectable" data-tab-btn="2">При получении</button>
+                  </div>
+                  <div class="cart-payment__content">
+                    <div class="cart-payment__item tab-content__item tab-content__item--active" data-tab-content="1">
+                      Мы пришлем Вам номер карты для оплаты после оформления заказа.
+                    </div>
+                    <div class="cart-payment__item tab-content__item" data-tab-content="2">
+                      Оплата наличными при самовывозе или наложеный платеж при получении.
+                    </div>
+                  </div>
+                  </div>
+                <label class="cart-form__comment form-label">
+                  <textarea class="form-label__input form-label__input--textarea" name="message" placeholder="Ваш комментарий к заказу"></textarea>
+                </label>
+                <div class="cart-form__btns">
+                  <button class="cart-form__btn cart-form__btn--submit btn btn--big btn--1" type="submit">ОФОРМИТЬ ЗАКАЗ</button>
+                  <button class="cart-form__btn cart-form__btn--reset btn btn--big btn--res" type="reset">Сбросить</button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="sended-for-class" z-index="-1"></button>
+    </div>
+    
+    
+  </main>
   @@include('html/footer.html',{})
-
+  
   <script src="js/app.min.js"></script>
 </body>
 
