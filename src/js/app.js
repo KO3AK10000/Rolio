@@ -18,15 +18,14 @@ window.addEventListener('DOMContentLoaded', function () {
     flsFunctions.windowHeight();
   });
 
-  //-----------------classModal--------------------
+  //------------------MODALS-----------------
   let lastFocus;
+
   class Modal {
     constructor(modal, btn) {
       this.open = document.querySelector(btn);
       this.modal = document.querySelector(modal);
       this.close = this.modal.querySelector('.modal__close');
-
-
 
       this.open.addEventListener('click', () => {
         lastFocus = document.activeElement;
@@ -57,6 +56,11 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
 
+  const writeUs = new Modal('.modal--write', '.contacts__btn');
+  const sended = new Modal('.modal--sended', '.sended-for-class');
+  const cart = new Modal('.modal--cart', '.cart');
+
+
   //--------------------NAV-MOB--------------------------
 
   const navBtn = document.querySelector('.nav-btn');
@@ -64,55 +68,63 @@ window.addEventListener('DOMContentLoaded', function () {
   if (navBtn) {
     const nav = document.querySelector('.nav');
     navBtn.addEventListener('click', (e) => {
-      navBtn.classList.toggle('nav-btn--open');
-      nav.classList.toggle('nav--open');
-      if (nav.classList.contains('nav--open')) {
-        nav.classList.remove('nav--close');
-        document.querySelector('body').style.overflow = 'hidden';
-      } else {
-        nav.classList.add('nav--close');
-        document.querySelector('body').style.overflow = 'auto';
-      }
+      openModal();
+      noScroll();
     });
 
     nav.addEventListener('click', (e) => {
       if (e.target.classList.contains('nav__link')) {
-        navBtn.classList.toggle('nav-btn--open');
-        nav.classList.toggle('nav--open');
-        if (nav.classList.contains('nav--open')) {
-          nav.classList.remove('nav--close');
-          document.querySelector('body').style.overflow = 'hidden';
-        } else {
-          nav.classList.add('nav--close');
-          document.querySelector('body').style.overflow = 'auto';
-        }
+        openModal();
+        noScroll();
       }
     });
+
+    const openModal = () => {
+      navBtn.classList.toggle('nav-btn--open');
+      nav.classList.toggle('nav--open');
+    };
+
+    const noScroll = () => {
+      const body = document.querySelector('body');
+      if (nav.classList.contains('nav--open')) {
+        nav.classList.remove('nav--close');
+        body.style.overflow = 'hidden';
+      } else {
+        nav.classList.add('nav--close');
+        body.style.overflow = 'auto';
+      }
+    };
   }
 
   //---------------------NUMS---------------------------------
 
+
+  class Num {
+    constructor(parrent) {
+      parrent.addEventListener('click', (e) => {
+        const input = parrent.querySelector('.num__input'),
+          target = e.target;
+
+        if (target.classList.contains('num__btn--increase')) {
+          const val = parseInt(input.getAttribute('value'));
+          input.setAttribute('value', `${val+1}`);
+        } else if (target.classList.contains('num__btn--reduse')) {
+          const val = parseInt(input.getAttribute('value'));
+          if (val > 1) {
+            input.setAttribute('value', `${val-1}`);
+          }
+        }
+      });
+    }
+  }
+
   const nums = document.querySelectorAll('.num');
   if (nums.length > 0) {
     nums.forEach(num => {
-      const input = num.querySelector('.num__input');
-      const increase = num.querySelector('.num__btn--increase');
-      const reduse = num.querySelector('.num__btn--reduse');
-
-      increase.addEventListener('click', () => {
-        const val = parseInt(input.getAttribute('value'));
-        input.setAttribute('value', `${val+1}`);
-      });
-
-      reduse.addEventListener('click', () => {
-        const val = parseInt(input.getAttribute('value'));
-        if (val > 1) {
-          input.setAttribute('value', `${val-1}`);
-        }
-
-      });
+      num = new Num(num);
     });
   }
+
 
   //----------productSlider------------------
   const productSlider = document.querySelector('.products-swiper');
@@ -210,14 +222,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  //------------------MODALS-----------------
-
-  const writeUs = new Modal('.modal--write', '.contacts__btn');
-  const sended = new Modal('.modal--sended', '.sended-for-class');
-  const cart = new Modal('.modal--cart', '.cart');
-
-
-  //---------------маска для номера теLефона--------------
+  //---------------маска для номера теLефона--------------(нашел на просторах)
 
   [].forEach.call(document.querySelectorAll('[type="tel"]'), function (input) {
     var keyCode;
@@ -268,8 +273,12 @@ window.addEventListener('DOMContentLoaded', function () {
       formBtn = sendForm.querySelector('.write-us__btn'),
       formInput = sendForm.querySelectorAll('.form-label__input');
 
+
     formBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      const tel = String(formInput[1].value.replace(/[^0-9]/g, "")),
+        sended = document.querySelector('.modal--sended'),
+        name = formInput[0].value;
       let i = 0;
       formInput.forEach(el => {
         if (el.value !== '') {
@@ -279,16 +288,12 @@ window.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      const tel = String(formInput[1].value.replace(/[^0-9]/g, ""));
 
       if (tel.length == 12) {
         i++;
       } else {
         formInput[1].classList.add('error');
       }
-
-      const sended = document.querySelector('.modal--sended');
-      const name = formInput[0].value;
 
       if (i === 4) {
         sendForm.closest('.modal').classList.remove('modal--active');
@@ -312,10 +317,11 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  //--------------добавление товара в корзину---------------------
+  //--------------РАБОТА с КорЗинОй---------------------
 
   const saleItem = document.querySelectorAll('.sale-item');
   let itemInCart = [];
+  let indexInCart = [];
   const cartCount = document.querySelector('.cart__count');
 
   saleItem.forEach(item => {
@@ -331,9 +337,9 @@ window.addEventListener('DOMContentLoaded', function () {
         cost: (+item.dataset.price) * (+item.querySelector('.sale-item-count').value)
       };
 
-      let indexInCart = [];
 
-      if (typeof itemInCart === 'object') {
+
+      if (typeof itemInCart === 'object') { //добавление индекса товара в массив
         if (itemInCart.length > 0) {
           itemInCart.forEach(item => {
             const i = item.dataset.sale;
@@ -341,7 +347,7 @@ window.addEventListener('DOMContentLoaded', function () {
           });
         }
       }
-      if (!indexInCart.includes(cartItem.index)) {
+      if (!indexInCart.includes(cartItem.index)) { //проверка, нет ли в корзине такого товара (повторно не добавится)
         cart.insertAdjacentHTML('beforeend',
           `<li class="cart-modal__item cart-item" data-price="${cartItem.price}" data-sale="${cartItem.index}">
         <div class="cart-item__topline">
@@ -369,54 +375,40 @@ window.addEventListener('DOMContentLoaded', function () {
       }
 
 
-      const nums = document.querySelectorAll('.num');
+      const nums = document.querySelectorAll('.num'); 
       if (nums.length > 0) {
         nums.forEach(num => {
-          const input = num.querySelector('.num__input');
-          const increase = num.querySelector('.num__btn--increase');
-          const reduse = num.querySelector('.num__btn--reduse');
-
-          increase.addEventListener('click', () => {
-            const val = parseInt(input.getAttribute('value'));
-            input.setAttribute('value', `${val+1}`);
-          });
-
-          reduse.addEventListener('click', () => {
-            const val = parseInt(input.getAttribute('value'));
-            if (val > 1) {
-              input.setAttribute('value', `${val-1}`);
-            }
-
-          });
+          num = new Num(num);
         });
       }
 
-      itemInCart = document.querySelectorAll('.cart-item');
+      itemInCart = document.querySelectorAll('.cart-item'); 
 
 
       if (typeof itemInCart === 'object') {
         if (itemInCart.length > 0) {
           cartCount.classList.add('cart__count--full');
           cartCount.textContent = `${itemInCart.length}`;
-        }else{
+        } else {
           cartCount.classList.remove('cart__count--full');
         }
+
         itemInCart.forEach((item) => {
           item.addEventListener('click', (e) => {
             const target = e.target;
-            if (target.classList.contains('num__btn')) {
+            if (target.classList.contains('num__btn')) {  //расчет стоимости всех едениц товара(при изменении количества)
               const cost = item.querySelector('.cart-item__cost-num');
               const costNum = (+item.dataset.price) * (+item.querySelector('.num__input').value);
               cost.textContent = `${costNum}`;
-            } else if(target.classList.contains('cart-item__delete')) {
+            } else if (target.classList.contains('cart-item__delete')) { //удаление товаров из корзины
               target.closest('.cart-modal__item.cart-item').remove();
               itemInCart = document.querySelectorAll('.cart-item');
               if (itemInCart.length > 0) {
                 cartCount.classList.add('cart__count--full');
                 cartCount.textContent = `${itemInCart.length}`;
-              }else{
+              } else {
                 cartCount.classList.remove('cart__count--full');
-                document.querySelector('.cart-modal__list').innerHTML='<li class="no-item">В корзине нет товаров</li>';
+                document.querySelector('.cart-modal__list').innerHTML = '<li class="no-item">В корзине нет товаров</li>';
               }
             }
           });
@@ -425,21 +417,21 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  document.querySelector('.cart').addEventListener('click', ()=>{
-    if(itemInCart.length==0){
-      document.querySelector('.cart-modal__list').innerHTML='<li class="no-item">В корзине нет товаров</li>';
-    }else{
+  document.querySelector('.cart').addEventListener('click', () => { //сообщение об отсутствии товаров в корзине
+    if (itemInCart.length == 0) {
+      document.querySelector('.cart-modal__list').innerHTML = '<li class="no-item">В корзине нет товаров</li>';
+    } else {
       const noItem = document.querySelector('.no-item');
-      if(noItem){
+      if (noItem) {
         noItem.remove();
       }
-      
+
     }
   });
 
-   //------------Табы
+  //------------Табы
 
-   const tabs = (e) => {
+  const tabs = (e) => {
     if (e.target.classList.contains('tab-item') && !e.target.classList.contains('tab-item--active')) {
       let index;
       e.target.closest('.tab-container').querySelectorAll('.tab-item').forEach(tabBtn => {
@@ -456,14 +448,16 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  if (document.querySelector('.cart-delivery__tabs')) {
-    document.querySelector('.cart-delivery__tabs').addEventListener('click', tabs);
+  const deliveryTabs = document.querySelector('.cart-delivery__tabs');
+  if (deliveryTabs) {
+    deliveryTabs.addEventListener('click', tabs);
   }
 
-  if (document.querySelector('.cart-payment__tabs')) {
-    document.querySelector('.cart-payment__tabs').addEventListener('click', tabs);
+  const paymentTabs = document.querySelector('.cart-payment__tabs');
+  if (paymentTabs) {
+    paymentTabs.addEventListener('click', tabs);
   }
-  
+
 
 
 
